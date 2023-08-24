@@ -1,4 +1,4 @@
-{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/8a2df89b69678ef20c7376d93a33f6af825a2bb7.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/976fa3369d722e76f37c77493d99829540d43845.tar.gz") {} }:
 
   with pkgs;
 
@@ -28,46 +28,7 @@ let
           data_table
           desc
           flexdashboard
-          #fusen
-          (buildRPackage {
-             name = "fusen";
-             src = fetchgit {
-               url = "https://github.com/ThinkR-open/fusen/";
-               branchName = "main";
-               rev = "d617172447d2947efb20ad6a4463742b8a5d79dc";
-               sha256 = "sha256-TOHA1ymLUSgZMYIA1a2yvuv0799svaDOl3zOhNRxcmw=";
-          };
-          propagatedBuildInputs = [
-            attachment
-            cli
-            desc
-            devtools
-            glue
-            here 
-            magrittr
-            parsermd 
-            roxygen2
-            stringi
-            tibble
-            tidyr
-            usethis
-            yaml
-             ];
-          })
-          (buildRPackage {
-             name = "rix";
-             src = fetchgit {
-               url = "https://github.com/b-rodrigues/rix/";
-               branchName = "master";
-               rev = "ae39d2142461688b1be41db800752a949ebb3c7b";
-               sha256 = "sha256-rOhFnc01CzRE6Hl73xGvaE/bQCoX0d5tZ10jzAoqQ7g=";
-          };
-          propagatedBuildInputs = [
-            httr
-            jsonlite
-            sys
-             ];
-          }) 
+          fusen
           ggridges
           httpgd
           janitor
@@ -77,6 +38,45 @@ let
           tarchetypes
           targets
           tidyverse
+          (buildRPackage {
+             name = "rix";
+             src = fetchgit {
+               url = "https://github.com/b-rodrigues/rix/";
+               branchName = "master";
+               rev = "2a45b67a083f58959d3a6c8eaa8581e75fde3c92";
+               sha256 = "sha256-c3QXmTGrvoXCyTWl7fbU4YQGOq1om4g0b2Hf+tY6/cA=";
+          };
+          propagatedBuildInputs = [
+            httr
+            jsonlite
+            sys
+             ];
+          }) 
+          #(buildRPackage {
+          #   name = "fusen";
+          #   src = fetchgit {
+          #     url = "https://github.com/ThinkR-open/fusen/";
+          #     branchName = "main";
+          #     rev = "d617172447d2947efb20ad6a4463742b8a5d79dc";
+          #     sha256 = "sha256-TOHA1ymLUSgZMYIA1a2yvuv0799svaDOl3zOhNRxcmw=";
+          #};
+          #propagatedBuildInputs = [
+          #  attachment
+          #  cli
+          #  desc
+          #  devtools
+          #  glue
+          #  here 
+          #  magrittr
+          #  parsermd 
+          #  roxygen2
+          #  stringi
+          #  tibble
+          #  tidyr
+          #  usethis
+          #  yaml
+          #   ];
+          #})
         ];
   };
 
