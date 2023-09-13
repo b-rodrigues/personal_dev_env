@@ -81,7 +81,7 @@ let
   };
 
   other_pkgs = [
-        quarto pandoc
+        quarto pandoc nix
   ];
 
   dev_env = mkShell rec {
