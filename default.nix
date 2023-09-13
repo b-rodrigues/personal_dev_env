@@ -28,7 +28,32 @@ let
           data_table
           desc
           flexdashboard
-          fusen
+          #fusen
+          (buildRPackage {
+             name = "fusen";
+             src = fetchgit {
+               url = "https://github.com/ThinkR-open/fusen/";
+               branchName = "main";
+               rev = "0de486b5f451d98b38720042eac24f62f5638139";
+               sha256 = "sha256-1znkk+5KHHBCeKN0YP6abYB5KWnxbvlgNkYj9LyS2ls=";
+          };
+          propagatedBuildInputs = [
+            attachment
+            cli
+            desc
+            devtools
+            glue
+            here 
+            magrittr
+            parsermd 
+            roxygen2
+            stringi
+            tibble
+            tidyr
+            usethis
+            yaml
+           ];
+          })
           ggridges
           httpgd
           janitor
@@ -43,8 +68,8 @@ let
              src = fetchgit {
                url = "https://github.com/b-rodrigues/rix/";
                branchName = "master";
-               rev = "2a45b67a083f58959d3a6c8eaa8581e75fde3c92";
-               sha256 = "sha256-c3QXmTGrvoXCyTWl7fbU4YQGOq1om4g0b2Hf+tY6/cA=";
+               rev = "b8c14242f7ac4743d1cacb0de9a92cb51b7e3ece";
+               sha256 = "sha256-vOJoB41DVjP2fEzR/f5p5FJOn6sw8S15aaMiS5S1FXg=";
           };
           propagatedBuildInputs = [
             httr
@@ -52,31 +77,6 @@ let
             sys
              ];
           }) 
-          #(buildRPackage {
-          #   name = "fusen";
-          #   src = fetchgit {
-          #     url = "https://github.com/ThinkR-open/fusen/";
-          #     branchName = "main";
-          #     rev = "d617172447d2947efb20ad6a4463742b8a5d79dc";
-          #     sha256 = "sha256-TOHA1ymLUSgZMYIA1a2yvuv0799svaDOl3zOhNRxcmw=";
-          #};
-          #propagatedBuildInputs = [
-          #  attachment
-          #  cli
-          #  desc
-          #  devtools
-          #  glue
-          #  here 
-          #  magrittr
-          #  parsermd 
-          #  roxygen2
-          #  stringi
-          #  tibble
-          #  tidyr
-          #  usethis
-          #  yaml
-          #   ];
-          #})
         ];
   };
 
