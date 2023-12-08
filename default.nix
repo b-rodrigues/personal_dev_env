@@ -1,4 +1,4 @@
-{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/976fa3369d722e76f37c77493d99829540d43845.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/b-rodrigues/nixpkgs/archive/06b93631a20bc9c1e73d7b5c706af12ee01922aa.tar.gz") {} }:
 
   with pkgs;
 
@@ -56,6 +56,7 @@ let
           })
           ggridges
           httpgd
+          quarto
           janitor
           openxlsx
           reactable
@@ -63,13 +64,14 @@ let
           tarchetypes
           targets
           tidyverse
+          withr
           (buildRPackage {
              name = "rix";
              src = fetchgit {
                url = "https://github.com/b-rodrigues/rix/";
                branchName = "master";
-               rev = "87edbda1005f26fb7e56e8e5c85883be0dd3b822";
-               sha256 = "sha256-CPRfnmB/rDMDOxdO6qmaNs9Ewndpts4YmGhsrDc6Sng=";
+               rev = "ea92a88ecdfc2d74bdf1dde3e441d008521b1756";
+               sha256 = "sha256-fKNtFaWPyoiS7xOOlhjok3Ddqsij7CymoKAeTT8ygIU=";
           };
           propagatedBuildInputs = [
             httr
