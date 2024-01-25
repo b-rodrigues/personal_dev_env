@@ -1,4 +1,4 @@
-{ pkgs ? import (fetchTarball "https://github.com/b-rodrigues/nixpkgs/archive/06b93631a20bc9c1e73d7b5c706af12ee01922aa.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/b-rodrigues/nixpkgs/archive/8147cf10a9454e462970fbdb01e0841b93671e09.tar.gz") {} }:
 
   with pkgs;
 
@@ -21,39 +21,14 @@ let
 
     r_pkgs = rWrapper.override {
         packages = with rPackages; [
-          arrow
           blogdown
           bookdown
           chronicler
+          codemetar
           data_table
           desc
           flexdashboard
-          #fusen
-          (buildRPackage {
-             name = "fusen";
-             src = fetchgit {
-               url = "https://github.com/ThinkR-open/fusen/";
-               branchName = "main";
-               rev = "0de486b5f451d98b38720042eac24f62f5638139";
-               sha256 = "sha256-1znkk+5KHHBCeKN0YP6abYB5KWnxbvlgNkYj9LyS2ls=";
-          };
-          propagatedBuildInputs = [
-            attachment
-            cli
-            desc
-            devtools
-            glue
-            here 
-            magrittr
-            parsermd 
-            roxygen2
-            stringi
-            tibble
-            tidyr
-            usethis
-            yaml
-           ];
-          })
+          fusen
           ggridges
           httpgd
           quarto
@@ -70,10 +45,11 @@ let
              src = fetchgit {
                url = "https://github.com/b-rodrigues/rix/";
                branchName = "master";
-               rev = "ea92a88ecdfc2d74bdf1dde3e441d008521b1756";
-               sha256 = "sha256-fKNtFaWPyoiS7xOOlhjok3Ddqsij7CymoKAeTT8ygIU=";
+               rev = "da9a95e2af3b32480d22cd7f3ec515765196b303";
+               sha256 = "sha256-Q0Gwkr6dJgdi6TgRsQjgTFH1BJSiZVpB76/xpOhk7ew=";
           };
           propagatedBuildInputs = [
+            codetools
             httr
             jsonlite
             sys
