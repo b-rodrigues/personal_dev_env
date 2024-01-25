@@ -25,6 +25,7 @@ let
           bookdown
           chronicler
           codemetar
+          covr
           data_table
           desc
           flexdashboard
