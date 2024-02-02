@@ -1,4 +1,4 @@
-{ pkgs ? import (fetchTarball "https://github.com/b-rodrigues/nixpkgs/archive/8147cf10a9454e462970fbdb01e0841b93671e09.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/b-rodrigues/nixpkgs/archive/bab0aa0f13586cef832226ecd2a7ef9fe6ca28ff.tar.gz") {} }:
 
   with pkgs;
 
@@ -28,14 +28,18 @@ let
           covr
           data_table
           desc
+          diffviewer
+          DT
           flexdashboard
           fusen
           ggridges
+          htmltools
           httpgd
           quarto
           janitor
           openxlsx
           reactable
+          rhub
           skimr
           tarchetypes
           targets
@@ -46,8 +50,8 @@ let
              src = fetchgit {
                url = "https://github.com/b-rodrigues/rix/";
                branchName = "master";
-               rev = "da9a95e2af3b32480d22cd7f3ec515765196b303";
-               sha256 = "sha256-Q0Gwkr6dJgdi6TgRsQjgTFH1BJSiZVpB76/xpOhk7ew=";
+               rev = "7535ed4d3b14c657744433577151a28e058ac33d";
+               sha256 = "sha256-8wLHAs7Z+ErHVh+/mTaU4C2M2N+u6k/s/r9WZ6CWqIc=";
           };
           propagatedBuildInputs = [
             codetools
